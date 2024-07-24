@@ -35,13 +35,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bntLAN = new System.Windows.Forms.Button();
             this.txbIP = new System.Windows.Forms.TextBox();
-            this.pcbMark = new System.Windows.Forms.PictureBox();
             this.prcbCoolDown = new System.Windows.Forms.ProgressBar();
             this.txbPlayerName = new System.Windows.Forms.TextBox();
+            this.pctbMark = new System.Windows.Forms.PictureBox();
             this.pctbAvatar = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMark)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbMark)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +52,7 @@
             this.pnlChessBoard.Name = "pnlChessBoard";
             this.pnlChessBoard.Size = new System.Drawing.Size(858, 661);
             this.pnlChessBoard.TabIndex = 0;
+            this.pnlChessBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlChessBoard_Paint);
             // 
             // panel2
             // 
@@ -65,11 +66,11 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.bntLAN);
             this.panel3.Controls.Add(this.txbIP);
-            this.panel3.Controls.Add(this.pcbMark);
+            this.panel3.Controls.Add(this.pctbMark);
             this.panel3.Controls.Add(this.prcbCoolDown);
             this.panel3.Controls.Add(this.txbPlayerName);
             this.panel3.Location = new System.Drawing.Point(876, 342);
@@ -104,15 +105,6 @@
             this.txbIP.TabIndex = 3;
             this.txbIP.Text = "127.0.0.1";
             // 
-            // pcbMark
-            // 
-            this.pcbMark.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pcbMark.Location = new System.Drawing.Point(189, 3);
-            this.pcbMark.Name = "pcbMark";
-            this.pcbMark.Size = new System.Drawing.Size(146, 141);
-            this.pcbMark.TabIndex = 2;
-            this.pcbMark.TabStop = false;
-            // 
             // prcbCoolDown
             // 
             this.prcbCoolDown.Location = new System.Drawing.Point(3, 31);
@@ -127,6 +119,17 @@
             this.txbPlayerName.ReadOnly = true;
             this.txbPlayerName.Size = new System.Drawing.Size(180, 22);
             this.txbPlayerName.TabIndex = 0;
+            this.txbPlayerName.TextChanged += new System.EventHandler(this.txbPlayerName_TextChanged);
+            // 
+            // pctbMark
+            // 
+            this.pctbMark.BackColor = System.Drawing.SystemColors.Control;
+            this.pctbMark.Location = new System.Drawing.Point(186, 3);
+            this.pctbMark.Name = "pctbMark";
+            this.pctbMark.Size = new System.Drawing.Size(146, 141);
+            this.pctbMark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctbMark.TabIndex = 2;
+            this.pctbMark.TabStop = false;
             // 
             // pctbAvatar
             // 
@@ -156,7 +159,7 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMark)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbMark)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbAvatar)).EndInit();
             this.ResumeLayout(false);
 
@@ -169,7 +172,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pctbAvatar;
         private System.Windows.Forms.TextBox txbIP;
-        private System.Windows.Forms.PictureBox pcbMark;
+        private System.Windows.Forms.PictureBox pctbMark;
         private System.Windows.Forms.ProgressBar prcbCoolDown;
         private System.Windows.Forms.TextBox txbPlayerName;
         private System.Windows.Forms.Label label1;

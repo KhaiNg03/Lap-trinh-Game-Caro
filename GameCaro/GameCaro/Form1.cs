@@ -18,7 +18,7 @@ namespace GameCaro
         public Form1()
         {
             InitializeComponent();
-            ChessBoard = new ChessBoardManager(pnlChessBoard);
+            ChessBoard = new ChessBoardManager(pnlChessBoard, txbPlayerName, pctbMark);
             ChessBoard.DrawChessBoard();
         }
 
@@ -30,6 +30,16 @@ namespace GameCaro
         }
 
         private void pctbAvatar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbPlayerName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlChessBoard_Paint(object sender, PaintEventArgs e)
         {
 
         }
