@@ -90,6 +90,7 @@ namespace GameCaro
         #region Methods
         public void DrawChessBoard()
         {
+            ChessBoard.Enabled = true;
             Matrix = new List<List<Button>>();
 
             Button oldButton = new Button() { Width = 0, Location = new Point(0, 0) };

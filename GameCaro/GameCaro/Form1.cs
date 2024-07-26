@@ -31,6 +31,8 @@ namespace GameCaro
         }
         void EndGame()
         {
+            timerCoolDown.Stop();
+            pnlChessBoard.Enabled = false;
             MessageBox.Show("Kết thúc Game!");
         }
         private void ChessBoard_PlayerMarked(object sender, EventArgs e)
@@ -71,6 +73,7 @@ namespace GameCaro
             if (prcbCoolDown.Value >= prcbCoolDown.Maximum)
             {
                 EndGame() ;
+                
             }
         }
     }
