@@ -36,12 +36,14 @@ namespace GameCaro
         {
             timerCoolDown.Stop();
             pnlChessBoard.Enabled = false;
+            undoToolStripMenuItem.Enabled = false;
             MessageBox.Show("Kết thúc Game!");
         }
         void NewGame()
         {
             prcbCoolDown.Value = 0;
             timerCoolDown.Stop();
+            undoToolStripMenuItem.Enabled = true;
 
             ChessBoard.DrawChessBoard();
         }
@@ -51,7 +53,7 @@ namespace GameCaro
         }
         void Undo()
         {
-
+            ChessBoard.Undo();
         }
         private void ChessBoard_PlayerMarked(object sender, EventArgs e)
         {
