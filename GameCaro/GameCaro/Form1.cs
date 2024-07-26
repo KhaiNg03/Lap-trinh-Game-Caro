@@ -26,14 +26,32 @@ namespace GameCaro
             prcbCoolDown.Maximum = Cons.COOL_DOWN_TIME;
             prcbCoolDown.Value = Cons.COOL_DOWN_INTERVAL;
             timerCoolDown.Interval = Cons.COOL_DOWN_INTERVAL;
-            ChessBoard.DrawChessBoard();
+
             timerCoolDown.Start();
+
+            NewGame();
         }
+        #region Methods
         void EndGame()
         {
             timerCoolDown.Stop();
             pnlChessBoard.Enabled = false;
             MessageBox.Show("Kết thúc Game!");
+        }
+        void NewGame()
+        {
+            prcbCoolDown.Value = 0;
+            timerCoolDown.Stop();
+
+            ChessBoard.DrawChessBoard();
+        }
+        void Quit()
+        {
+            Application.Exit();
+        }
+        void Undo()
+        {
+
         }
         private void ChessBoard_PlayerMarked(object sender, EventArgs e)
         {
@@ -76,5 +94,27 @@ namespace GameCaro
                 
             }
         }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewGame();
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Undo();
+        }
+
+        private void quiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Quit();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn thoát", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+                e.Cancel = true;
+        }
+        #endregion
     }
 }
