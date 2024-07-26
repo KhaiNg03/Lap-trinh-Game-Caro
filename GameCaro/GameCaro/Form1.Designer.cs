@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlChessBoard = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pctbAvatar = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.bntLAN = new System.Windows.Forms.Button();
             this.txbIP = new System.Windows.Forms.TextBox();
+            this.pctbMark = new System.Windows.Forms.PictureBox();
             this.prcbCoolDown = new System.Windows.Forms.ProgressBar();
             this.txbPlayerName = new System.Windows.Forms.TextBox();
-            this.pctbMark = new System.Windows.Forms.PictureBox();
-            this.pctbAvatar = new System.Windows.Forms.PictureBox();
+            this.timerCoolDown = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbAvatar)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbMark)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlChessBoard
@@ -62,6 +64,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(338, 302);
             this.panel2.TabIndex = 1;
+            // 
+            // pctbAvatar
+            // 
+            this.pctbAvatar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pctbAvatar.BackColor = System.Drawing.SystemColors.Control;
+            this.pctbAvatar.BackgroundImage = global::GameCaro.Properties.Resources.longchim;
+            this.pctbAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctbAvatar.Location = new System.Drawing.Point(0, -1);
+            this.pctbAvatar.Name = "pctbAvatar";
+            this.pctbAvatar.Size = new System.Drawing.Size(335, 301);
+            this.pctbAvatar.TabIndex = 0;
+            this.pctbAvatar.TabStop = false;
+            this.pctbAvatar.Click += new System.EventHandler(this.pctbAvatar_Click);
             // 
             // panel3
             // 
@@ -105,6 +120,16 @@
             this.txbIP.TabIndex = 3;
             this.txbIP.Text = "127.0.0.1";
             // 
+            // pctbMark
+            // 
+            this.pctbMark.BackColor = System.Drawing.SystemColors.Control;
+            this.pctbMark.Location = new System.Drawing.Point(186, 3);
+            this.pctbMark.Name = "pctbMark";
+            this.pctbMark.Size = new System.Drawing.Size(146, 141);
+            this.pctbMark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctbMark.TabIndex = 2;
+            this.pctbMark.TabStop = false;
+            // 
             // prcbCoolDown
             // 
             this.prcbCoolDown.Location = new System.Drawing.Point(3, 31);
@@ -121,28 +146,9 @@
             this.txbPlayerName.TabIndex = 0;
             this.txbPlayerName.TextChanged += new System.EventHandler(this.txbPlayerName_TextChanged);
             // 
-            // pctbMark
+            // timerCoolDown
             // 
-            this.pctbMark.BackColor = System.Drawing.SystemColors.Control;
-            this.pctbMark.Location = new System.Drawing.Point(186, 3);
-            this.pctbMark.Name = "pctbMark";
-            this.pctbMark.Size = new System.Drawing.Size(146, 141);
-            this.pctbMark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctbMark.TabIndex = 2;
-            this.pctbMark.TabStop = false;
-            // 
-            // pctbAvatar
-            // 
-            this.pctbAvatar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pctbAvatar.BackColor = System.Drawing.SystemColors.Control;
-            this.pctbAvatar.BackgroundImage = global::GameCaro.Properties.Resources.longchim;
-            this.pctbAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctbAvatar.Location = new System.Drawing.Point(0, -1);
-            this.pctbAvatar.Name = "pctbAvatar";
-            this.pctbAvatar.Size = new System.Drawing.Size(335, 301);
-            this.pctbAvatar.TabIndex = 0;
-            this.pctbAvatar.TabStop = false;
-            this.pctbAvatar.Click += new System.EventHandler(this.pctbAvatar_Click);
+            this.timerCoolDown.Tick += new System.EventHandler(this.timerCoolDown_Tick);
             // 
             // Form1
             // 
@@ -157,10 +163,10 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctbAvatar)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbMark)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,6 +183,7 @@
         private System.Windows.Forms.TextBox txbPlayerName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bntLAN;
+        private System.Windows.Forms.Timer timerCoolDown;
     }
 }
 

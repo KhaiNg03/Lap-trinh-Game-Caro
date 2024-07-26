@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|d:\\game caro\\lap-trinh-game-caro\\gamecaro\\gamecaro\\chessboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\chessboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\gamecaro\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\gamecaro\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\gamecaro\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\gamecaro\\cons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\cons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\gamecaro\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFDC2F5D-EA37-4A5F-9581-0887DA0AE9A1}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cons.cs",
+              "DocumentMoniker": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\Cons.cs",
+              "RelativeDocumentMoniker": "GameCaro\\Cons.cs",
+              "ToolTip": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\Cons.cs",
+              "RelativeToolTip": "GameCaro\\Cons.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T07:08:09.208Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChessBoardManager.cs",
+              "DocumentMoniker": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\ChessBoardManager.cs",
+              "RelativeDocumentMoniker": "GameCaro\\ChessBoardManager.cs",
+              "ToolTip": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\ChessBoardManager.cs",
+              "RelativeToolTip": "GameCaro\\ChessBoardManager.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAywFAAAABnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T07:08:08.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\Form1.cs",
+              "RelativeDocumentMoniker": "GameCaro\\Form1.cs",
+              "ToolTip": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\Form1.cs",
+              "RelativeToolTip": "GameCaro\\Form1.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAA3wEgAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T07:08:09.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\Form1.cs",
+              "RelativeDocumentMoniker": "GameCaro\\Form1.cs",
+              "ToolTip": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\Form1.cs [Design]",
+              "RelativeToolTip": "GameCaro\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T07:08:09.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "GameCaro\\Form1.Designer.cs",
+              "ToolTip": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\Form1.Designer.cs",
+              "RelativeToolTip": "GameCaro\\Form1.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAL0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T07:08:09.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\Player.cs",
+              "RelativeDocumentMoniker": "GameCaro\\Player.cs",
+              "ToolTip": "D:\\Game Caro\\Lap-trinh-Game-Caro\\GameCaro\\GameCaro\\Player.cs",
+              "RelativeToolTip": "GameCaro\\Player.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T07:08:08.513Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
