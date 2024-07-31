@@ -18,6 +18,7 @@ namespace GameCaro
         Socket client;
         public bool ConnectSever()
         {
+            
             IPEndPoint iep = new IPEndPoint(IPAddress.Parse(IP), PORT);
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 

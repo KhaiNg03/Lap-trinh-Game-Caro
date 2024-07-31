@@ -21,6 +21,7 @@ namespace GameCaro
         public Form1()
         {
             InitializeComponent();
+            Control.CheckForIllegalCrossThreadCalls = false;
             ChessBoard = new ChessBoardManager(pnlChessBoard, txbPlayerName, pctbMark);
             ChessBoard.EndedGame += ChessBoard_EndedGame;
             ChessBoard.PlayerMarked += ChessBoard_PlayerMarked;
@@ -58,10 +59,15 @@ namespace GameCaro
         {
             ChessBoard.Undo();
         }
-        private void ChessBoard_PlayerMarked(object sender, EventArgs e)
+        private void ChessBoard_PlayerMarked(object sender, ButtonClickEvent e)
         {
             timerCoolDown.Start();
+            pnlChessBoard.Enabled = false;
             prcbCoolDown.Value = 0;
+
+            socket.Send(new SocketData((int)SocketCommand.SEND_POINT, "", e.ClickedPoint));
+            
+            Listen();
         }
 
         private void ChessBoard_EndedGame(object sender, EventArgs e)
@@ -127,38 +133,16 @@ namespace GameCaro
 
             if (!socket.ConnectSever())
             {
+                socket.isSever = true;
+                pnlChessBoard.Enabled = true;
                 socket.CreateServer();
-
-                Thread listenThread = new Thread(() =>
-                {
-                    while (true)
-                    {
-                        Thread.Sleep(500);
-                        try
-                        {
-                            Listen();
-                            break;
-                        }
-                        catch
-                        {
-
-                        }
-                    }
-                    
-                });
-                listenThread.IsBackground = true;
-                listenThread.Start();
             }
             else
             {
-                Thread listenThread = new Thread(() =>
-                {
-                    Listen();
-                });
-                listenThread.IsBackground = true;
-                listenThread.Start();
+                socket.isSever = false;
+                pnlChessBoard.Enabled = false;
+                Listen();
 
-                socket.Send("Thông tin từ Client");
             }
 
         }
@@ -174,10 +158,60 @@ namespace GameCaro
         }
         void Listen()
         {
-            string data = (string)socket.Receive();
+            Thread listenThread = new Thread(() =>
+            {
+                try
+                {
+                    SocketData data = (SocketData)socket.Receive();
+                    ProcessData(data);
+                }
+                catch( Exception e)
+                {
+                }
+            });
 
-            MessageBox.Show(data);
+            listenThread.IsBackground = true;
+            listenThread.Start();
         }
+
+        private void ProcessData(SocketData data)
+        {
+            switch (data.Command)
+            {
+                case (int)SocketCommand.NOTIFY:
+                    MessageBox.Show(data.Message);
+                    break;
+
+                case (int)SocketCommand.NEW_GAME:
+                    break;
+
+                case (int)SocketCommand.SEND_POINT:
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        prcbCoolDown.Value = 0;
+                        pnlChessBoard.Enabled = true;
+                        timerCoolDown.Start();
+                        ChessBoard.OtherPlayerMark(data.Point);
+                    }));
+
+
+
+                    break;
+
+                case (int)SocketCommand.UNDO:
+                    break;
+                case (int)SocketCommand.END_GAME:
+                    break;
+
+                case (int)SocketCommand.QUIT:
+                    break;
+
+                default: 
+                    break;
+            }
+            Listen();
+        }
+
         #endregion
 
 
