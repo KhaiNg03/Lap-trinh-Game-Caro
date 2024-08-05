@@ -41,7 +41,7 @@ namespace GameCaro
             timerCoolDown.Stop();
             pnlChessBoard.Enabled = false;
             undoToolStripMenuItem.Enabled = false;
-            MessageBox.Show("Kết thúc Game!");
+            //MessageBox.Show("Kết thúc Game!");
         }
         void NewGame()
         {
@@ -58,6 +58,7 @@ namespace GameCaro
         void Undo()
         {
             ChessBoard.Undo();
+            prcbCoolDown.Value = 0;
         }
         private void ChessBoard_PlayerMarked(object sender, ButtonClickEvent e)
         {
@@ -66,6 +67,7 @@ namespace GameCaro
             prcbCoolDown.Value = 0;
 
             socket.Send(new SocketData((int)SocketCommand.SEND_POINT, "", e.ClickedPoint));
+            undoToolStripMenuItem.Enabled = false ;
             
             Listen();
         }
@@ -73,6 +75,8 @@ namespace GameCaro
         private void ChessBoard_EndedGame(object sender, EventArgs e)
         {
             EndGame();
+
+            socket.Send(new SocketData((int)SocketCommand.END_GAME, "", new Point()));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -101,19 +105,23 @@ namespace GameCaro
 
             if (prcbCoolDown.Value >= prcbCoolDown.Maximum)
             {
-                EndGame() ;
-                
+                EndGame();
+                socket.Send(new SocketData((int)SocketCommand.TIME_OUT, "", new Point()));
+
             }
         }
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGame();
+            socket.Send(new SocketData((int)SocketCommand.NEW_GAME, "", new Point()));
+            pnlChessBoard.Enabled = true;
         }
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Undo();
+            socket.Send(new SocketData((int)SocketCommand.UNDO, "", new Point()));
         }
 
         private void quiteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -124,7 +132,20 @@ namespace GameCaro
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc muốn thoát", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-                e.Cancel = true;
+            { 
+                e.Cancel = true; 
+            }
+            else
+            {
+                try
+                {
+                    socket.Send(new SocketData((int)SocketCommand.QUIT, "", new Point()));
+                }
+                catch
+                {
+
+                }
+            }
         }
 
         private void bntLAN_Click(object sender, EventArgs e)
@@ -183,6 +204,11 @@ namespace GameCaro
                     break;
 
                 case (int)SocketCommand.NEW_GAME:
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        NewGame();
+                        pnlChessBoard.Enabled = false ;
+                    }));
                     break;
 
                 case (int)SocketCommand.SEND_POINT:
@@ -192,6 +218,7 @@ namespace GameCaro
                         pnlChessBoard.Enabled = true;
                         timerCoolDown.Start();
                         ChessBoard.OtherPlayerMark(data.Point);
+                        undoToolStripMenuItem.Enabled = true;
                     }));
 
 
@@ -199,11 +226,18 @@ namespace GameCaro
                     break;
 
                 case (int)SocketCommand.UNDO:
+                    Undo();
+                    prcbCoolDown.Value = 0;
                     break;
                 case (int)SocketCommand.END_GAME:
+                    MessageBox.Show("Đã 5 con trên 1 hàng!");
                     break;
-
+                case (int)SocketCommand.TIME_OUT:
+                    MessageBox.Show("Đã hết giờ!");
+                    break;
                 case (int)SocketCommand.QUIT:
+                    timerCoolDown.Stop();
+                    MessageBox.Show("Người chơi đã thoát!");
                     break;
 
                 default: 
