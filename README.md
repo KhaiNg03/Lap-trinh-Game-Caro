@@ -1,7 +1,7 @@
 # Caro Game (Tic Tac Toe) - C# (Visual Studio)
 
 ## Giới thiệu
-**Caro Game** (hay còn gọi là **Tic Tac Toe**) là một trò chơi giải trí đơn giản giữa hai người chơi. Trò chơi này được phát triển bằng ngôn ngữ lập trình **C#** sử dụng **Visual Studio**. Mục tiêu của game là để người chơi xếp 5 dấu (X hoặc O) liên tiếp trên bảng lớn
+**Caro Game** (hay còn gọi là **Tic Tac Toe**) là một trò chơi giải trí đơn giản giữa hai người chơi. Trò chơi này được phát triển bằng ngôn ngữ lập trình **C#** sử dụng **Visual Studio** và nền tảng **.NET Desktop**. Mục tiêu của game là để người chơi xếp 5 dấu (X hoặc O) liên tiếp trên bảng lớn.
 
 Trò chơi hỗ trợ **chế độ 2 người chơi cục bộ** và **chế độ chơi qua mạng** để người chơi có thể thi đấu với bạn bè hoặc đối thủ từ xa.
 
@@ -17,9 +17,12 @@ Trò chơi hỗ trợ **chế độ 2 người chơi cục bộ** và **chế đ
 - **C#**: Ngôn ngữ lập trình chính để phát triển game.
 - **WinForms**: Thư viện giao diện người dùng (UI) cho ứng dụng desktop.
 - **Socket Programming**: Để kết nối và chơi qua mạng giữa các người chơi.
+- **.NET Desktop**: Nền tảng để xây dựng, kiểm tra, ký và phát hành ứng dụng desktop.
 - **Visual Studio**: IDE để phát triển và kiểm tra ứng dụng.
 
 ## Cài đặt
+Để chạy dự án này trên máy tính của bạn, làm theo các bước sau:
+
 1. **Clone repository**:
    ```bash
    git clone https://github.com/KhaiNg03/Lap-trinh-Game-Caro.git
